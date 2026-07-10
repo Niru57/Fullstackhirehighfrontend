@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HireHigh | Smart Recruitment Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
+}
+
+/*==========================
+        HEADER
+==========================*/
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+}
+
+.logo h2{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:35px;
+    font-size:17px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#3b82f6;
+}
+
+/*==========================
+        HERO
+==========================*/
+
+.hero{
+
+    margin-top:80px;
+    min-height:90vh;
+
+    background:linear-gradient(135deg,#111827,#2563eb);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:70px 80px;
+
+    color:white;
+
+}
+
+.hero-left{
+
+    width:50%;
+
+}
+
+.hero-left h1{
+
+    font-size:58px;
+    margin-bottom:25px;
+    line-height:1.2;
+
+}
+
+.hero-left p{
+
+    font-size:19px;
+    color:#dbeafe;
+    margin-bottom:40px;
+    max-width:560px;
+
+}
+
+.buttons{
+
+    display:flex;
+    gap:20px;
+
+}
+
+.btn{
+
+    padding:15px 38px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.register{
+
+    background:white;
+
+    color:#2563eb;
+
+}
+
+.login{
+
+    background:#2563eb;
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 25px rgba(0,0,0,.25);
+
+}
+
+.hero-right{
+
+    width:45%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:500px;
+
+}
+
+/*==========================
+        COMMON
+==========================*/
+
+section{
+
+    padding:90px 80px;
+
+}
+
+.section-title{
+
+    font-size:38px;
+
+    color:#111827;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-text{
+
+    max-width:950px;
+
+    margin:auto;
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#555;
+
+    line-height:1.9;
+
+}
+
+/*==========================
+        ABOUT
+==========================*/
+
+.about{
+
+    background:white;
+
+}
+
+/*==========================
+    WHY CHOOSE
+==========================*/
+
+.why{
+
+    background:#eef2f7;
+
+}
+
+.feature-list{
+
+    max-width:900px;
+
+    margin:60px auto 0;
+
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.feature span{
+
+    font-size:28px;
+
+}
+
+.feature h3{
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.feature p{
+
+    color:#666;
+
+}
+
+/*==========================
+    HOW IT WORKS
+==========================*/
+
+.process{
+
+    background:white;
+
+}
+
+.timeline{
+
+    max-width:700px;
+
+    margin:60px auto 0;
+
+}
+
+.step{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.circle{
+
+    width:60px;
+
+    height:60px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    flex-shrink:0;
+
+}
+
+.step-content h3{
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.step-content p{
+
+    color:#666;
+
+}
+
+.line{
+
+    width:3px;
+
+    height:45px;
+
+    background:#2563eb;
+
+    margin:0 auto;
+
+}
+
+/*==========================
+        FOOTER
+==========================*/
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+footer h2{
+
+    margin-bottom:12px;
+
+}
+
+footer p{
+
+    color:#cbd5e1;
+
+    margin:8px 0;
+
+}
+
+.footer-links{
+
+    margin:18px 0;
+
+}
+
+.footer-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+}
+
+.footer-links a:hover{
+
+    color:#60a5fa;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+header{
+
+padding:20px;
+
+flex-direction:column;
+height:auto;
+
+}
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+padding:60px 30px;
+
+}
+
+.hero-left,
+.hero-right{
+
+width:100%;
+
+}
+
+.hero-left{
+
+margin-bottom:50px;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+section{
+
+padding:70px 25px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<h2>HireHigh</h2>
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="register.html">Register</a>
+
+<a href="login.html">Login</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>Find Your Dream Job With Confidence</h1>
+
+<p>
+Build your future with HireHigh, a secure recruitment platform
+that connects job seekers and recruiters through a simple,
+professional, and user-friendly hiring experience.
+</p>
+
+<div class="buttons">
+
+<button class="btn register"
+onclick="location.href='register.html'">
+
+Register
+
+</button>
+
+<button class="btn login"
+onclick="location.href='login.html'">
+
+Login
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="https://img.magnific.com/premium-vector/recruitment-process-resume-examination-candidate-selection_771703-69697.jpg?semt=ais_hybrid&w=740&q=80"
+alt="Recruitment Illustration">
+
+</div>
+
+</section>
+
+<section class="about">
+
+<h2 class="section-title">
+
+About HireHigh
+
+</h2>
+
+<p class="section-text">
+
+HireHigh is a secure recruitment platform designed to simplify
+the hiring process for both job seekers and recruiters. It provides
+a clean and user-friendly interface where users can register,
+explore opportunities, apply for jobs, and track their recruitment
+journey with ease.
+
+</p>
+
+</section>
+
+<section class="why">
+
+<h2 class="section-title">
+
+Why Choose HireHigh
+
+</h2>
+
+<div class="feature-list">
+    <div class="feature">
+
+<span>🔒</span>
+
+<div>
+
+<h3>Secure JWT Authentication</h3>
+
+<p>
+Protects user accounts by allowing only authenticated users
+to access secured resources within the platform.
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>👤</span>
+
+<div>
+
+<h3>User-Friendly Interface</h3>
+
+<p>
+A clean and intuitive interface that helps users navigate
+through the recruitment process with ease.
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>💼</span>
+
+<div>
+
+<h3>Browse & Apply for Jobs</h3>
+
+<p>
+Explore available job opportunities and submit applications
+through a streamlined recruitment workflow.
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>📊</span>
+
+<div>
+
+<h3>Track Application Status</h3>
+
+<p>
+Stay informed about every stage of the recruitment process,
+from application submission to interview scheduling.
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>🧑‍💼</span>
+
+<div>
+
+<h3>Recruiter Dashboard</h3>
+
+<p>
+Recruiters can efficiently manage job postings, review
+applications, and shortlist qualified candidates.
+</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<span>📅</span>
+
+<div>
+
+<h3>Interview Scheduling</h3>
+
+<p>
+Organize interview sessions between recruiters and candidates
+through a structured recruitment workflow.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="process">
+
+<h2 class="section-title">
+
+How HireHigh Works
+
+</h2>
+
+<div class="timeline">
+
+<div class="step">
+
+<div class="circle">
+
+1
+
+</div>
+
+<div class="step-content">
+
+<h3>Create an Account</h3>
+
+<p>
+Register securely by creating your HireHigh account.
+</p>
+
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+
+<div class="circle">
+
+2
+
+</div>
+
+<div class="step-content">
+
+<h3>Complete Your Profile</h3>
+
+<p>
+Provide your professional information to build a complete
+candidate profile.
+</p>
+
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+
+<div class="circle">
+
+3
+
+</div>
+
+<div class="step-content">
+
+<h3>Browse Available Jobs</h3>
+
+<p>
+Explore job opportunities posted by recruiters and choose
+positions that match your skills.
+</p>
+
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+
+<div class="circle">
+
+4
+
+</div>
+
+<div class="step-content">
+
+<h3>Apply for Jobs</h3>
+
+<p>
+Submit your application quickly through the HireHigh portal.
+</p>
+
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+
+<div class="circle">
+
+5
+
+</div>
+
+<div class="step-content">
+
+<h3>Recruiter Reviews Applications</h3>
+
+<p>
+Recruiters evaluate submitted applications and shortlist
+eligible candidates.
+</p>
+
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div class="step">
+
+<div class="circle">
+
+6
+
+</div>
+
+<div class="step-content">
+
+<h3>Interview & Hiring</h3>
+
+<p>
+Qualified candidates proceed to interviews and complete the
+recruitment process.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>💼 HireHigh</h2>
+
+<p>Smart Recruitment Portal</p>
+
+<div class="footer-links">
+
+<a href="#">Home</a>
+
+<a href="register.html">Register</a>
+
+<a href="login.html">Login</a>
+
+</div>
+
+<p>© 2026 HireHigh. All Rights Reserved.</p>
+</footer>
+
+</body>
+
+</html>

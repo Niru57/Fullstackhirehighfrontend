@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HireHigh - Candidate Profiles</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+
+    background:#eef3f8;
+    color:#333;
+
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    color:white;
+
+    padding:20px 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+.logo h2{
+
+    font-size:32px;
+
+}
+
+
+.logo span{
+
+    font-size:14px;
+
+    opacity:.8;
+
+}
+
+
+
+.dashboard-btn{
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+.dashboard-btn:hover{
+
+    background:#dbeafe;
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+    width:90%;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.hero h1{
+
+    font-size:40px;
+
+    color:#1e3a8a;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.hero p{
+
+    font-size:18px;
+
+    color:#64748b;
+
+}
+
+
+
+
+
+
+/* INFORMATION CARDS */
+
+
+.info-section{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+.info-card{
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.info-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+
+
+.info-card h2{
+
+    color:#2563eb;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.info-card p{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+/* ABOUT */
+
+
+.about{
+
+    width:90%;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+
+.about h2{
+
+    color:#1e3a8a;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.about p{
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+
+
+
+/* FEATURES */
+
+
+.features{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+.feature{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+<h2>
+HireHigh
+</h2>
+
+
+<span>
+Recruitment & Hiring Management System
+</span>
+
+
+</div>
+
+
+
+<button class="dashboard-btn"
+onclick="window.location.href='../dashboard.html'">
+
+⬅ Dashboard
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<h1>
+
+👤 Candidate Profile Management
+
+</h1>
+
+
+<p>
+
+Manage candidate details, skills, experience
+and recruitment profiles securely.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<!-- INFORMATION -->
+
+
+<section class="info-section">
+
+
+<div class="info-card">
+
+<h2>
+
+👤
+
+</h2>
+
+<p>
+
+Candidate Profiles
+
+</p>
+
+</div>
+
+
+
+
+<div class="info-card">
+
+<h2>
+
+🛠
+
+</h2>
+
+<p>
+
+Skills Management
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="info-card">
+
+<h2>
+
+📄
+
+</h2>
+
+<p>
+
+Professional Experience
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="info-card">
+
+<h2>
+
+🔐
+
+</h2>
+
+<p>
+
+JWT Protected Data
+
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- ABOUT -->
+
+
+<section class="about">
+
+
+<h2>
+
+About Candidate Module
+
+</h2>
+
+
+
+<p>
+
+The Candidate Profile module helps recruiters
+maintain candidate information including personal
+details, skills, experience and recruitment records.
+It supports secure CRUD operations using JWT
+authentication with Spring Boot REST APIs.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+</section>
+<!-- CRUD CONTAINER -->
+
+
+<style>
+
+
+.container{
+
+    width:90%;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.title{
+
+    text-align:center;
+
+    font-size:30px;
+
+    color:#1e3a8a;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+.operations{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+
+
+.operations button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.operations button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+
+.get{
+
+    background:#2563eb;
+
+}
+
+
+.post{
+
+    background:#16a34a;
+
+}
+
+
+.put{
+
+    background:#f59e0b;
+
+}
+
+
+.patch{
+
+    background:#9333ea;
+
+}
+
+
+.delete{
+
+    background:#dc2626;
+
+}
+
+
+
+
+
+.box{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+}
+
+
+
+
+.box h2{
+
+    color:#1e3a8a;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+}
+
+
+
+
+.action{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+table{
+
+    width:100%;
+
+    margin-top:25px;
+
+    border-collapse:collapse;
+
+}
+
+
+
+th{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+
+
+td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+footer{
+
+    margin-top:40px;
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+
+
+</style>
+
+
+
+
+
+<div class="container">
+
+
+<h2 class="title">
+
+Candidate Operations
+
+</h2>
+
+
+
+
+<div class="operations">
+
+
+<button class="get" onclick="showBox('getBox')">
+
+GET
+
+</button>
+
+
+<button class="post" onclick="showBox('postBox')">
+
+POST
+
+</button>
+
+
+<button class="put" onclick="showBox('putBox')">
+
+PUT
+
+</button>
+
+
+<button class="patch" onclick="showBox('patchBox')">
+
+PATCH
+
+</button>
+
+
+<button class="delete" onclick="showBox('deleteBox')">
+
+DELETE
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GET -->
+
+
+<div id="getBox" class="box">
+
+
+<h2>
+
+View Candidates
+
+</h2>
+
+
+
+<button class="action" onclick="getAllCandidates()">
+
+Get All Candidates
+
+</button>
+
+
+
+<br><br>
+
+
+
+<input id="getId" placeholder="Enter Candidate ID">
+
+
+
+<button class="action" onclick="getCandidateById()">
+
+Get Candidate By ID
+
+</button>
+
+
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Phone</th>
+
+<th>Skills</th>
+
+<th>Experience</th>
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="candidateTable">
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- POST -->
+
+
+<div id="postBox" class="box">
+
+
+<h2>
+
+Create Candidate
+
+</h2>
+
+
+
+<input id="postName" placeholder="Full Name">
+
+
+<input id="postEmail" placeholder="Email">
+
+
+<input id="postPhone" placeholder="Phone">
+
+
+<input id="postSkills" placeholder="Skills">
+
+
+<input id="postExperience" placeholder="Experience">
+
+
+
+
+
+<button class="action" onclick="saveCandidate()">
+
+Create Candidate
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PUT -->
+
+
+<div id="putBox" class="box">
+
+
+<h2>
+
+Update Candidate
+
+</h2>
+
+
+
+<input id="putId" placeholder="Candidate ID">
+
+
+<input id="putName" placeholder="Full Name">
+
+
+<input id="putEmail" placeholder="Email">
+
+
+<input id="putPhone" placeholder="Phone">
+
+
+<input id="putSkills" placeholder="Skills">
+
+
+<input id="putExperience" placeholder="Experience">
+
+
+
+<button class="action" onclick="updateCandidate()">
+
+Update Candidate
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PATCH -->
+
+
+<div id="patchBox" class="box">
+
+
+<h2>
+
+Patch Candidate
+
+</h2>
+
+
+
+
+<input id="patchId" placeholder="Candidate ID">
+
+
+<input id="patchName" placeholder="Full Name">
+
+
+<input id="patchEmail" placeholder="Email">
+
+
+<input id="patchPhone" placeholder="Phone">
+
+
+<input id="patchSkills" placeholder="Skills">
+
+
+<input id="patchExperience" placeholder="Experience">
+
+
+
+<button class="action" onclick="patchCandidate()">
+
+Patch Candidate
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- DELETE -->
+
+
+<div id="deleteBox" class="box">
+
+
+<h2>
+
+Delete Candidate
+
+</h2>
+
+
+
+
+<input id="deleteId" placeholder="Candidate ID">
+
+
+
+<button class="action" onclick="deleteCandidate()">
+
+Delete Candidate
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+© 2026 HireHigh Recruitment System
+
+</footer>
+<script>
+
+
+const baseURL="https://fullstackhirehighbackend.onrender.com/hirehigh";
+
+
+
+// GET JWT TOKEN
+
+function getToken(){
+
+    return localStorage.getItem("jwt_token");
+
+}
+
+
+
+
+// SHOW BOX
+
+
+function showBox(id){
+
+
+    let boxes=document.querySelectorAll(".box");
+
+
+    boxes.forEach(box=>{
+
+        box.style.display="none";
+
+    });
+
+
+
+    document.getElementById(id).style.display="block";
+
+
+}
+
+
+
+
+
+
+
+// ================= GET ALL CANDIDATES =================
+
+
+async function getAllCandidates(){
+
+
+try{
+
+
+let response = await fetch(
+
+baseURL+"/candidates",
+
+{
+
+method:"GET",
+
+headers:{
+
+
+"Authorization":"Bearer "+getToken()
+
+
+}
+
+}
+
+);
+
+
+
+
+let candidates = await response.json();
+
+
+
+
+let table=document.getElementById("candidateTable");
+
+
+
+table.innerHTML="";
+
+
+
+
+candidates.forEach(candidate=>{
+
+
+table.innerHTML += `
+
+
+<tr>
+
+<td>${candidate.id}</td>
+
+<td>${candidate.fullName}</td>
+
+<td>${candidate.email}</td>
+
+<td>${candidate.phone}</td>
+
+<td>${candidate.skills}</td>
+
+<td>${candidate.experience}</td>
+
+</tr>
+
+
+`;
+
+
+});
+
+
+
+}
+
+
+catch(error){
+
+
+alert("Server Error");
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= GET BY ID =================
+
+
+async function getCandidateById(){
+
+
+
+let id=document.getElementById("getId").value;
+
+
+
+let response = await fetch(
+
+baseURL+"/candidates/"+id,
+
+{
+
+
+method:"GET",
+
+
+headers:{
+
+
+"Authorization":"Bearer "+getToken()
+
+
+}
+
+
+}
+
+);
+
+
+
+let candidate=await response.json();
+
+
+
+let table=document.getElementById("candidateTable");
+
+
+
+table.innerHTML=`
+
+
+<tr>
+
+<td>${candidate.id}</td>
+
+<td>${candidate.fullName}</td>
+
+<td>${candidate.email}</td>
+
+<td>${candidate.phone}</td>
+
+<td>${candidate.skills}</td>
+
+<td>${candidate.experience}</td>
+
+</tr>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= CREATE CANDIDATE =================
+
+
+async function saveCandidate(){
+
+
+
+let candidate={
+
+
+fullName:
+
+document.getElementById("postName").value,
+
+
+email:
+
+document.getElementById("postEmail").value,
+
+
+phone:
+
+document.getElementById("postPhone").value,
+
+
+skills:
+
+document.getElementById("postSkills").value,
+
+
+experience:
+
+document.getElementById("postExperience").value
+
+
+};
+
+
+
+
+
+await fetch(
+
+baseURL+"/candidates",
+
+{
+
+
+method:"POST",
+
+
+headers:{
+
+
+"Content-Type":"application/json",
+
+
+"Authorization":"Bearer "+getToken()
+
+
+},
+
+
+body:JSON.stringify(candidate)
+
+
+}
+
+);
+
+
+
+
+alert("Candidate Created Successfully");
+
+
+
+getAllCandidates();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= UPDATE CANDIDATE =================
+
+
+
+async function updateCandidate(){
+
+
+
+let id=document.getElementById("putId").value;
+
+
+
+let candidate={
+
+
+fullName:
+
+document.getElementById("putName").value,
+
+
+email:
+
+document.getElementById("putEmail").value,
+
+
+phone:
+
+document.getElementById("putPhone").value,
+
+
+skills:
+
+document.getElementById("putSkills").value,
+
+
+experience:
+
+document.getElementById("putExperience").value
+
+
+};
+
+
+
+
+
+
+await fetch(
+
+baseURL+"/candidates/"+id,
+
+{
+
+
+method:"PUT",
+
+
+headers:{
+
+
+"Content-Type":"application/json",
+
+
+"Authorization":"Bearer "+getToken()
+
+
+},
+
+
+body:JSON.stringify(candidate)
+
+
+}
+
+);
+
+
+
+
+alert("Candidate Updated Successfully");
+
+
+
+getAllCandidates();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= PATCH CANDIDATE =================
+
+
+
+async function patchCandidate(){
+
+
+
+let id=document.getElementById("patchId").value;
+
+
+
+let candidate={
+
+
+
+fullName:
+
+document.getElementById("patchName").value || null,
+
+
+
+email:
+
+document.getElementById("patchEmail").value || null,
+
+
+
+phone:
+
+document.getElementById("patchPhone").value || null,
+
+
+
+skills:
+
+document.getElementById("patchSkills").value || null,
+
+
+
+experience:
+
+document.getElementById("patchExperience").value || null
+
+
+
+};
+
+
+
+
+
+
+
+await fetch(
+
+baseURL+"/candidates/"+id,
+
+{
+
+
+method:"PATCH",
+
+
+headers:{
+
+
+"Content-Type":"application/json",
+
+
+"Authorization":"Bearer "+getToken()
+
+
+},
+
+
+body:JSON.stringify(candidate)
+
+
+}
+
+);
+
+
+
+
+alert("Candidate Patched Successfully");
+
+
+
+getAllCandidates();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= DELETE CANDIDATE =================
+
+
+
+async function deleteCandidate(){
+
+
+
+let id=document.getElementById("deleteId").value;
+
+
+
+
+if(!confirm("Delete this Candidate?")){
+
+
+return;
+
+
+}
+
+
+
+
+
+await fetch(
+
+baseURL+"/candidates/"+id,
+
+{
+
+
+method:"DELETE",
+
+
+headers:{
+
+
+"Authorization":"Bearer "+getToken()
+
+
+}
+
+
+}
+
+);
+
+
+
+
+
+alert("Candidate Deleted Successfully");
+
+
+
+getAllCandidates();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// LOAD DATA WHEN PAGE OPEN
+
+
+
+window.onload=function(){
+
+
+getAllCandidates();
+
+
+};
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HireHigh - Job Postings</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+background:#eef3f8;
+color:#333;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+
+background:linear-gradient(135deg,#0f172a,#2563eb);
+color:white;
+padding:20px 50px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+.logo h2{
+font-size:32px;
+}
+
+
+.logo span{
+font-size:14px;
+opacity:.8;
+}
+
+
+
+.dashboard-btn{
+
+background:white;
+color:#2563eb;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+width:92%;
+
+margin:35px auto;
+
+background:white;
+
+padding:45px;
+
+text-align:center;
+
+border-radius:15px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.hero h1{
+
+font-size:40px;
+
+color:#1e3a8a;
+
+margin-bottom:15px;
+
+}
+
+
+
+.hero p{
+
+font-size:18px;
+
+color:#64748b;
+
+}
+
+
+
+/* STATS */
+
+
+.stats{
+
+width:92%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+text-align:center;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+.card h2{
+
+color:#2563eb;
+
+font-size:35px;
+
+}
+
+
+
+.card p{
+
+margin-top:10px;
+
+color:#64748b;
+
+}
+
+
+
+/* ABOUT */
+
+
+.about{
+
+width:92%;
+
+margin:35px auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+.about h2{
+
+color:#1e3a8a;
+
+margin-bottom:15px;
+
+}
+
+
+
+/* FEATURES */
+
+
+.features{
+
+width:92%;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
+}
+
+
+
+.feature{
+
+background:#2563eb;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:12px;
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+<h2>HireHigh</h2>
+
+<span>
+Recruitment & Hiring Management System
+</span>
+
+</div>
+
+
+
+<button class="dashboard-btn"
+onclick="window.location.href='../dashboard.html'">
+
+⬅ Dashboard
+
+</button>
+
+
+</div>
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+Job Postings Management
+</h1>
+
+
+<p>
+Create, manage and track job opportunities for recruiters and candidates.
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="stats">
+
+
+<div class="card">
+
+<h2 id="totalJobs">
+0
+</h2>
+
+<p>
+Total Jobs
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Active
+</h2>
+
+<p>
+Available Positions
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Recruiters
+</h2>
+
+<p>
+Job Owners
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+Hiring
+</h2>
+
+<p>
+Candidate Selection
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="about">
+
+
+<h2>
+About Job Posting Module
+</h2>
+
+
+<p>
+
+The Job Posting module allows recruiters to create,
+update, view and delete job opportunities with secure
+JWT authentication and backend integration using Spring Boot.
+
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="features">
+
+
+<div class="feature">
+✅ Job Creation
+</div>
+
+
+<div class="feature">
+✅ Job Tracking
+</div>
+
+
+<div class="feature">
+✅ CRUD Operations
+</div>
+
+
+<div class="feature">
+✅ Recruiter Management
+</div>
+
+
+<div class="feature">
+✅ JWT Security
+</div>
+
+
+<div class="feature">
+✅ Spring Boot API
+</div>
+
+
+</section>
+<style>
+
+
+.container{
+
+width:92%;
+
+margin:40px auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+
+
+.title{
+
+text-align:center;
+
+font-size:30px;
+
+color:#1e3a8a;
+
+margin-bottom:30px;
+
+}
+
+
+
+.operations{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.operations button{
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:8px;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+
+
+.get{
+
+background:#2563eb;
+
+}
+
+
+.post{
+
+background:#16a34a;
+
+}
+
+
+.put{
+
+background:#f59e0b;
+
+}
+
+
+.patch{
+
+background:#9333ea;
+
+}
+
+
+.delete{
+
+background:#dc2626;
+
+}
+
+
+
+.box{
+
+display:none;
+
+margin-top:30px;
+
+padding:25px;
+
+border:1px solid #ddd;
+
+border-radius:12px;
+
+}
+
+
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}
+
+
+
+.action{
+
+background:#1e3a8a;
+
+color:white;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+table{
+
+width:100%;
+
+margin-top:25px;
+
+border-collapse:collapse;
+
+}
+
+
+
+th{
+
+background:#1e3a8a;
+
+color:white;
+
+padding:12px;
+
+}
+
+
+
+td{
+
+padding:12px;
+
+border:1px solid #ddd;
+
+text-align:center;
+
+}
+
+
+
+footer{
+
+margin-top:40px;
+
+background:#0f172a;
+
+color:white;
+
+padding:20px;
+
+text-align:center;
+
+}
+
+
+
+</style>
+
+
+
+
+
+<div class="container">
+
+
+<h2 class="title">
+
+Choose an Operation
+
+</h2>
+
+
+
+<div class="operations">
+
+
+<button class="get" onclick="showBox('getBox')">
+GET
+</button>
+
+
+<button class="post" onclick="showBox('postBox')">
+POST
+</button>
+
+
+<button class="put" onclick="showBox('putBox')">
+PUT
+</button>
+
+
+<button class="patch" onclick="showBox('patchBox')">
+PATCH
+</button>
+
+
+<button class="delete" onclick="showBox('deleteBox')">
+DELETE
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- GET -->
+
+
+<div id="getBox" class="box">
+
+
+<h2>
+View Jobs
+</h2>
+
+
+<button class="action" onclick="getAllJobs()">
+
+Get All Jobs
+
+</button>
+
+
+
+<br><br>
+
+
+
+<input id="getId" placeholder="Enter Job ID">
+
+
+
+<button class="action" onclick="getJobById()">
+
+Get Job By ID
+
+</button>
+
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+<th>ID</th>
+
+<th>Title</th>
+
+<th>Department</th>
+
+<th>Description</th>
+
+<th>Hiring Goal</th>
+
+<th>Current Fills</th>
+
+<th>Status</th>
+
+
+</tr>
+
+
+</thead>
+
+
+<tbody id="jobTable">
+
+
+</tbody>
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- POST -->
+
+
+<div id="postBox" class="box">
+
+
+<h2>
+Create Job
+</h2>
+
+
+
+<input id="postTitle" placeholder="Job Title">
+
+
+<input id="postDepartment" placeholder="Department">
+
+
+<input id="postDescription" placeholder="Description">
+
+
+<input id="postHiringGoal" placeholder="Hiring Goal">
+
+
+<input id="postCurrentFills" placeholder="Current Fills">
+
+
+<input id="postStatus" placeholder="Status">
+
+
+
+<button class="action" onclick="saveJob()">
+
+Create Job
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PUT -->
+
+
+<div id="putBox" class="box">
+
+
+<h2>
+Update Job
+</h2>
+
+
+
+<input id="putId" placeholder="Job ID">
+
+
+<input id="putTitle" placeholder="Job Title">
+
+
+<input id="putDepartment" placeholder="Department">
+
+
+<input id="putDescription" placeholder="Description">
+
+
+<input id="putHiringGoal" placeholder="Hiring Goal">
+
+
+<input id="putCurrentFills" placeholder="Current Fills">
+
+
+<input id="putStatus" placeholder="Status">
+
+
+
+<button class="action" onclick="updateJob()">
+
+Update Job
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PATCH -->
+
+
+<div id="patchBox" class="box">
+
+
+<h2>
+Patch Job
+</h2>
+
+
+
+<input id="patchId" placeholder="Job ID">
+
+
+<input id="patchTitle" placeholder="Job Title">
+
+
+<input id="patchDepartment" placeholder="Department">
+
+
+<input id="patchDescription" placeholder="Description">
+
+
+<input id="patchHiringGoal" placeholder="Hiring Goal">
+
+
+<input id="patchCurrentFills" placeholder="Current Fills">
+
+
+<input id="patchStatus" placeholder="Status">
+
+
+
+<button class="action" onclick="patchJob()">
+
+Patch Job
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- DELETE -->
+
+
+<div id="deleteBox" class="box">
+
+
+<h2>
+Delete Job
+</h2>
+
+
+
+<input id="deleteId" placeholder="Job ID">
+
+
+
+<button class="action" onclick="deleteJob()">
+
+Delete Job
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+© 2026 HireHigh Recruitment System
+
+</footer> 
+<script>
+
+
+const baseURL="https://fullstackhirehighbackend.onrender.com/hirehigh";
+
+
+
+// SHOW OPERATION BOX
+
+
+function showBox(id){
+
+
+let boxes=document.querySelectorAll(".box");
+
+
+boxes.forEach(box=>{
+
+box.style.display="none";
+
+});
+
+
+document.getElementById(id).style.display="block";
+
+
+}
+
+
+
+
+
+
+
+// GET TOKEN
+
+
+function getToken(){
+
+return localStorage.getItem("jwt_token");
+
+}
+
+
+
+
+
+
+
+
+// ================= GET ALL JOBS =================
+
+
+
+async function getAllJobs(){
+
+
+try{
+
+
+let response=await fetch(baseURL+"/jobs",{
+
+
+method:"GET",
+
+
+headers:{
+
+
+"Authorization":"Bearer "+getToken()
+
+
+}
+
+
+});
+
+
+
+let jobs=await response.json();
+
+
+
+document.getElementById("totalJobs").innerHTML=jobs.length;
+
+
+
+let table=document.getElementById("jobTable");
+
+
+
+table.innerHTML="";
+
+
+
+jobs.forEach(job=>{
+
+
+table.innerHTML+=`
+
+
+<tr>
+
+<td>${job.id}</td>
+
+<td>${job.title}</td>
+
+<td>${job.department}</td>
+
+<td>${job.description}</td>
+
+<td>${job.hiringGoal}</td>
+
+<td>${job.currentFills}</td>
+
+<td>${job.status}</td>
+
+</tr>
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+
+catch(error){
+
+
+alert("Server Error");
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= GET JOB BY ID =================
+
+
+
+async function getJobById(){
+
+
+
+let id=document.getElementById("getId").value;
+
+
+
+let response=await fetch(baseURL+"/jobs/"+id,{
+
+
+headers:{
+
+
+"Authorization":"Bearer "+getToken()
+
+
+}
+
+
+});
+
+
+
+let job=await response.json();
+
+
+
+let table=document.getElementById("jobTable");
+
+
+
+table.innerHTML=`
+
+
+<tr>
+
+<td>${job.id}</td>
+
+<td>${job.title}</td>
+
+<td>${job.department}</td>
+
+<td>${job.description}</td>
+
+<td>${job.hiringGoal}</td>
+
+<td>${job.currentFills}</td>
+
+<td>${job.status}</td>
+
+</tr>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= CREATE JOB =================
+
+
+
+async function saveJob(){
+
+
+
+let job={
+
+
+
+title:document.getElementById("postTitle").value,
+
+
+department:document.getElementById("postDepartment").value,
+
+
+description:document.getElementById("postDescription").value,
+
+
+hiringGoal:Number(document.getElementById("postHiringGoal").value),
+
+
+currentFills:Number(document.getElementById("postCurrentFills").value),
+
+
+status:document.getElementById("postStatus").value
+
+
+
+};
+
+
+
+
+
+await fetch(baseURL+"/jobs",{
+
+
+
+method:"POST",
+
+
+
+headers:{
+
+
+
+"Content-Type":"application/json",
+
+
+
+"Authorization":"Bearer "+getToken()
+
+
+
+},
+
+
+
+body:JSON.stringify(job)
+
+
+
+});
+
+
+
+
+
+alert("Job Created Successfully");
+
+
+
+getAllJobs();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= UPDATE JOB =================
+
+
+
+async function updateJob(){
+
+
+
+let id=document.getElementById("putId").value;
+
+
+
+
+let job={
+
+
+
+title:document.getElementById("putTitle").value,
+
+
+department:document.getElementById("putDepartment").value,
+
+
+description:document.getElementById("putDescription").value,
+
+
+hiringGoal:Number(document.getElementById("putHiringGoal").value),
+
+
+currentFills:Number(document.getElementById("putCurrentFills").value),
+
+
+status:document.getElementById("putStatus").value
+
+
+
+};
+
+
+
+
+
+await fetch(baseURL+"/jobs/"+id,{
+
+
+
+method:"PUT",
+
+
+
+headers:{
+
+
+
+"Content-Type":"application/json",
+
+
+
+"Authorization":"Bearer "+getToken()
+
+
+
+},
+
+
+
+body:JSON.stringify(job)
+
+
+
+});
+
+
+
+
+alert("Job Updated Successfully");
+
+
+
+getAllJobs();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= PATCH JOB =================
+
+
+
+async function patchJob(){
+
+
+
+let id=document.getElementById("patchId").value;
+
+
+
+
+let job={
+
+
+
+title:document.getElementById("patchTitle").value,
+
+
+department:document.getElementById("patchDepartment").value,
+
+
+description:document.getElementById("patchDescription").value,
+
+
+hiringGoal:document.getElementById("patchHiringGoal").value || null,
+
+
+currentFills:document.getElementById("patchCurrentFills").value || null,
+
+
+status:document.getElementById("patchStatus").value
+
+
+
+};
+
+
+
+
+
+
+await fetch(baseURL+"/jobs/"+id,{
+
+
+
+method:"PATCH",
+
+
+
+headers:{
+
+
+
+"Content-Type":"application/json",
+
+
+
+"Authorization":"Bearer "+getToken()
+
+
+
+},
+
+
+
+body:JSON.stringify(job)
+
+
+
+});
+
+
+
+
+
+alert("Job Patched Successfully");
+
+
+
+getAllJobs();
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= DELETE JOB =================
+
+
+
+async function deleteJob(){
+
+
+
+let id=document.getElementById("deleteId").value;
+
+
+
+if(!confirm("Delete this Job?")){
+
+return;
+
+}
+
+
+
+
+await fetch(baseURL+"/jobs/"+id,{
+
+
+
+method:"DELETE",
+
+
+
+headers:{
+
+
+
+"Authorization":"Bearer "+getToken()
+
+
+
+}
+
+
+
+});
+
+
+
+
+
+alert("Job Deleted Successfully");
+
+
+
+getAllJobs();
+
+
+
+}
+
+
+
+
+
+
+
+
+// LOAD DATA WHEN PAGE OPEN
+
+
+window.onload=function(){
+
+
+getAllJobs();
+
+
+};
+
+
+
+</script>
+
+
+</body>
+
+</html>

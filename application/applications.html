@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HireHigh | Application Management</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:white;
+    padding:18px 45px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.logo h2{
+    font-size:32px;
+}
+
+.logo span{
+    display:block;
+    font-size:14px;
+    opacity:.9;
+    margin-top:4px;
+}
+
+.dashboard-btn{
+    background:white;
+    color:#2563eb;
+    border:none;
+    padding:12px 24px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dashboard-btn:hover{
+    background:#dbeafe;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    width:92%;
+    margin:35px auto;
+    background:white;
+    border-radius:20px;
+    padding:45px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.hero h1{
+    font-size:38px;
+    color:#1e3a8a;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#64748b;
+    line-height:1.8;
+    max-width:900px;
+    margin:auto;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary{
+    width:92%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    text-align:center;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h2{
+    color:#2563eb;
+    font-size:34px;
+}
+
+.card p{
+    margin-top:10px;
+    color:#64748b;
+}
+
+/* ================= TITLE ================= */
+
+.section-title{
+    text-align:center;
+    margin:50px 0 25px;
+    color:#1e3a8a;
+    font-size:32px;
+}
+
+/* ================= OPERATIONS ================= */
+
+.operations{
+    width:92%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.operations button{
+    padding:18px;
+    border:none;
+    border-radius:15px;
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.operations button:hover{
+    transform:translateY(-5px);
+}
+
+.get{
+    background:#2563eb;
+}
+
+.post{
+    background:#16a34a;
+}
+
+.put{
+    background:#d97706;
+}
+
+.patch{
+    background:#7c3aed;
+}
+
+.delete{
+    background:#dc2626;
+}
+
+/* ================= FORM BOX ================= */
+
+.box{
+
+    display:none;
+
+    width:92%;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.box h2{
+
+    color:#1e3a8a;
+
+    margin-bottom:20px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+
+    border:1px solid #cbd5e1;
+
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+.action{
+
+    margin-top:15px;
+
+    padding:12px 25px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+table{
+
+    width:100%;
+
+    margin-top:25px;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px;
+
+}
+
+td{
+
+    border:1px solid #e2e8f0;
+
+    padding:12px;
+
+    text-align:center;
+
+}
+
+footer{
+
+    margin-top:50px;
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:22px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+
+<h2>HireHigh</h2>
+
+<span>Enterprise Recruitment Management Platform</span>
+
+</div>
+
+<button class="dashboard-btn"
+onclick="window.location.href='../dashboard.html'">
+
+← Back to Dashboard
+
+</button>
+
+</div>
+
+<section class="hero">
+
+<h1>Application Management</h1>
+
+<p>
+
+Manage candidate applications throughout the recruitment lifecycle.
+Create, retrieve, update and delete application records securely using JWT-protected REST APIs.
+
+</p>
+
+</section>
+
+<section class="summary">
+
+<div class="card">
+<h2>142</h2>
+<p>Total Applications</p>
+</div>
+
+<div class="card">
+<h2>54</h2>
+<p>Shortlisted</p>
+</div>
+
+<div class="card">
+<h2>23</h2>
+<p>Interview Scheduled</p>
+</div>
+
+<div class="card">
+<h2>65</h2>
+<p>Under Review</p>
+</div>
+
+</section>
+
+<h2 class="section-title">
+
+Application Operations
+
+</h2>
+
+<div class="operations">
+
+<button class="get" onclick="showBox('getBox')">
+View Applications
+</button>
+
+<button class="post" onclick="showBox('postBox')">
+Create Application
+</button>
+
+<button class="put" onclick="showBox('putBox')">
+Update Application
+</button>
+
+<button class="patch" onclick="showBox('patchBox')">
+Modify Application
+</button>
+
+<button class="delete" onclick="showBox('deleteBox')">
+Delete Application
+</button>
+
+</div>
+
+<!-- ================= GET ================= -->
+
+<div id="getBox" class="box">
+
+<h2>View Applications</h2>
+
+<p style="color:#64748b;margin-bottom:20px;">
+Retrieve all application records or search for a specific application using its unique ID.
+</p>
+
+<button class="action" onclick="getAllApplications()">
+Load All Applications
+</button>
+
+<br><br>
+
+<input
+id="getId"
+type="number"
+placeholder="Enter Application ID">
+
+<button
+class="action"
+onclick="getApplicationById()">
+
+Search Application
+
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Application ID</th>
+
+<th>Candidate ID</th>
+
+<th>Job ID</th>
+
+<th>Application Status</th>
+
+<th>Applied Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="applicationTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= CREATE ================= -->
+
+<div id="postBox" class="box">
+
+<h2>Create New Application</h2>
+
+<p style="color:#64748b;margin-bottom:20px;">
+Enter the required details to register a new candidate application.
+</p>
+
+<input
+id="postCandidateId"
+type="number"
+placeholder="Enter Candidate ID">
+
+<input
+id="postJobId"
+type="number"
+placeholder="Enter Job ID">
+
+<input
+id="postStage"
+placeholder="Application Status">
+
+<input
+id="postAppliedAt"
+type="date">
+
+<button
+class="action"
+onclick="saveApplication()">
+
+Create Application
+
+</button>
+
+</div>
+
+<!-- ================= UPDATE ================= -->
+
+<div id="putBox" class="box">
+
+<h2>Update Application</h2>
+
+<p style="color:#64748b;margin-bottom:20px;">
+Update the complete application record using the Application ID.
+</p>
+
+<input
+id="putId"
+type="number"
+placeholder="Application ID">
+
+<input
+id="putCandidateId"
+type="number"
+placeholder="Candidate ID">
+
+<input
+id="putJobId"
+type="number"
+placeholder="Job ID">
+
+<input
+id="putStage"
+placeholder="Application Status">
+
+<input
+id="putAppliedAt"
+type="date">
+
+<button
+class="action"
+onclick="updateApplication()">
+
+Update Application
+
+</button>
+
+</div>
+
+<!-- ================= PATCH ================= -->
+
+<div id="patchBox" class="box">
+
+<h2>Modify Application</h2>
+
+<p style="color:#64748b;margin-bottom:20px;">
+Update only the fields that require modification.
+</p>
+
+<input
+id="patchId"
+type="number"
+placeholder="Application ID">
+
+<input
+id="patchStage"
+placeholder="New Application Status">
+
+<input
+id="patchAppliedAt"
+type="date">
+
+<button
+class="action"
+onclick="patchApplication()">
+
+Save Changes
+
+</button>
+
+</div>
+
+<!-- ================= DELETE ================= -->
+
+<div id="deleteBox" class="box">
+
+<h2>Delete Application</h2>
+
+<p style="color:#64748b;margin-bottom:20px;">
+Delete an application permanently from the recruitment system.
+</p>
+
+<input
+id="deleteId"
+type="number"
+placeholder="Application ID">
+
+<button
+class="action"
+style="background:#dc2626;"
+onclick="deleteApplication()">
+
+Delete Application
+
+</button>
+
+</div>
+
+<footer>
+
+© 2026 HireHigh Enterprise Recruitment Management System.
+All Rights Reserved.
+
+</footer>
+
+<script>
+
+const baseURL = "https://fullstackhirehighbackend.onrender.com/hirehigh";
+
+function showBox(id){
+
+let boxes=document.querySelectorAll(".box");
+
+boxes.forEach(box=>box.style.display="none");
+
+document.getElementById(id).style.display="block";
+
+}
+
+function getToken(){
+
+return localStorage.getItem("jwt_token");
+
+}
+// ================= GET ALL APPLICATIONS =================
+
+async function getAllApplications(){
+
+try{
+
+const response = await fetch(baseURL + "/applications",{
+
+method:"GET",
+
+headers:{
+"Authorization":"Bearer " + getToken()
+}
+
+});
+
+if(!response.ok){
+
+throw new Error("Unable to fetch applications");
+
+}
+
+const applications = await response.json();
+
+const table = document.getElementById("applicationTable");
+
+table.innerHTML="";
+
+applications.forEach(app=>{
+
+table.innerHTML += `
+
+<tr>
+
+<td>${app.id}</td>
+
+<td>${app.candidate.id}</td>
+
+<td>${app.job.id}</td>
+
+<td>${app.currentStage}</td>
+
+<td>${app.appliedAt}</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= GET APPLICATION BY ID =================
+
+async function getApplicationById(){
+
+try{
+
+const id=document.getElementById("getId").value;
+
+const response=await fetch(baseURL+"/applications/"+id,{
+
+method:"GET",
+
+headers:{
+
+"Authorization":"Bearer "+getToken()
+
+}
+
+});
+
+if(!response.ok){
+
+throw new Error("Application not found");
+
+}
+
+const app=await response.json();
+
+const table=document.getElementById("applicationTable");
+
+table.innerHTML=`
+
+<tr>
+
+<td>${app.id}</td>
+
+<td>${app.candidate.id}</td>
+
+<td>${app.job.id}</td>
+
+<td>${app.currentStage}</td>
+
+<td>${app.appliedAt}</td>
+
+</tr>
+
+`;
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= CREATE APPLICATION =================
+
+async function saveApplication(){
+
+try{
+
+let application={
+
+candidate:{
+
+id:Number(document.getElementById("postCandidateId").value)
+
+},
+
+job:{
+
+id:Number(document.getElementById("postJobId").value)
+
+},
+
+currentStage:document.getElementById("postStage").value,
+
+appliedAt:document.getElementById("postAppliedAt").value
+
+};
+
+const response=await fetch(baseURL+"/applications",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(application)
+
+});
+
+if(!response.ok){
+
+throw new Error("Unable to create application");
+
+}
+
+alert("Application has been created successfully.");
+
+getAllApplications();
+
+showBox("getBox");
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= UPDATE APPLICATION =================
+
+async function updateApplication(){
+
+try{
+
+const id=document.getElementById("putId").value;
+
+let application={
+
+candidate:{
+
+id:Number(document.getElementById("putCandidateId").value)
+
+},
+
+job:{
+
+id:Number(document.getElementById("putJobId").value)
+
+},
+
+currentStage:document.getElementById("putStage").value,
+
+appliedAt:document.getElementById("putAppliedAt").value
+
+};
+
+const response=await fetch(baseURL+"/applications/"+id,{
+
+method:"PUT",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(application)
+
+});
+
+if(!response.ok){
+
+throw new Error("Unable to update application");
+
+}
+
+alert("Application updated successfully.");
+
+getAllApplications();
+
+showBox("getBox");
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= PATCH APPLICATION =================
+
+async function patchApplication(){
+
+try{
+
+const id=document.getElementById("patchId").value;
+
+let application={
+
+currentStage:document.getElementById("patchStage").value || null,
+
+appliedAt:document.getElementById("patchAppliedAt").value || null
+
+};
+
+const response=await fetch(baseURL+"/applications/"+id,{
+
+method:"PATCH",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(application)
+
+});
+
+if(!response.ok){
+
+throw new Error("Unable to modify application");
+
+}
+
+alert("Application modified successfully.");
+
+getAllApplications();
+
+showBox("getBox");
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= DELETE APPLICATION =================
+
+async function deleteApplication(){
+
+try{
+
+const id=document.getElementById("deleteId").value;
+
+const response=await fetch(baseURL+"/applications/"+id,{
+
+method:"DELETE",
+
+headers:{
+
+"Authorization":"Bearer "+getToken()
+
+}
+
+});
+
+if(!response.ok){
+
+throw new Error("Unable to delete application");
+
+}
+
+alert("Application deleted successfully.");
+
+getAllApplications();
+
+showBox("getBox");
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+// ================= LOAD DATA =================
+
+window.onload=function(){
+
+showBox("getBox");
+
+getAllApplications();
+
+};
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HireHigh - Interview Sessions</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    color:white;
+
+    padding:20px 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo h2{
+
+    font-size:32px;
+
+}
+
+.logo span{
+
+    font-size:14px;
+
+    opacity:.8;
+
+}
+
+.dashboard-btn{
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:12px 25px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.dashboard-btn:hover{
+
+    background:#dbeafe;
+
+}
+
+/* HERO */
+
+.hero{
+
+    width:90%;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.hero h1{
+
+    font-size:40px;
+
+    color:#1e3a8a;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    color:#64748b;
+
+}
+
+/* CARDS */
+
+.stats{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card h2{
+
+    font-size:35px;
+
+    color:#2563eb;
+
+}
+
+.card p{
+
+    margin-top:10px;
+
+    color:#64748b;
+
+}
+
+/* ABOUT */
+
+.about{
+
+    width:90%;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.about h2{
+
+    color:#1e3a8a;
+
+    margin-bottom:15px;
+
+}
+
+.about p{
+
+    line-height:1.8;
+
+    color:#475569;
+
+}
+
+/* FEATURES */
+
+.features{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+}
+
+.feature{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.feature:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* CRUD CONTAINER */
+
+.container{
+
+    width:90%;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+.title{
+
+    text-align:center;
+
+    font-size:30px;
+
+    color:#1e3a8a;
+
+    margin-bottom:30px;
+
+}
+
+.operations{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.operations button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+.get{background:#2563eb;}
+.post{background:#16a34a;}
+.put{background:#f59e0b;}
+.patch{background:#9333ea;}
+.delete{background:#dc2626;}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+
+<h2>HireHigh</h2>
+
+<span>Recruitment & Hiring Management System</span>
+
+</div>
+
+<button class="dashboard-btn"
+onclick="window.location.href='../dashboard.html'">
+
+⬅ Dashboard
+
+</button>
+
+</div>
+
+<section class="hero">
+
+<h1>Interview Sessions Management</h1>
+
+<p>
+
+Manage interview schedules, interviewers, feedback and ratings securely using HireHigh.
+
+</p>
+
+</section>
+
+<section class="stats">
+
+<div class="card">
+
+<h2 id="totalInterviews">0</h2>
+
+<p>Total Interviews</p>
+
+</div>
+
+<div class="card">
+
+<h2>Schedule</h2>
+
+<p>Interview Planning</p>
+
+</div>
+
+<div class="card">
+
+<h2>Feedback</h2>
+
+<p>Candidate Evaluation</p>
+
+</div>
+
+<div class="card">
+
+<h2>Rating</h2>
+
+<p>Performance Review</p>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<h2>About Interview Sessions</h2>
+
+<p>
+
+Manage interview schedules, interviewer assignments, candidate feedback and ratings through secure JWT authentication.
+
+</p>
+
+<div class="container">
+
+<h2 class="title">
+
+Choose an Operation
+
+</h2>
+
+<div class="operations">
+
+<button class="get" onclick="showBox('getBox')">GET</button>
+
+<button class="post" onclick="showBox('postBox')">POST</button>
+
+<button class="put" onclick="showBox('putBox')">PUT</button>
+
+<button class="patch" onclick="showBox('patchBox')">PATCH</button>
+
+<button class="delete" onclick="showBox('deleteBox')">DELETE</button>
+
+</div>
+
+<div id="message"></div>
+<!-- ================= GET BOX ================= -->
+
+<div id="getBox" class="box">
+
+<h2>
+
+View Interview Sessions
+
+</h2>
+
+<br>
+
+<button class="action" onclick="getAllInterviews()">
+
+Get All Interviews
+
+</button>
+
+<br><br>
+
+<input id="getId" placeholder="Enter Interview ID">
+
+<button class="action" onclick="getInterviewById()">
+
+Get Interview By ID
+
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Application ID</th>
+
+<th>Interviewer ID</th>
+
+<th>Scheduled At</th>
+
+<th>Feedback</th>
+
+<th>Rating</th>
+
+</tr>
+
+</thead>
+
+<tbody id="interviewTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+
+
+<!-- ================= POST BOX ================= -->
+
+<div id="postBox" class="box">
+
+<h2>
+
+Create Interview Session
+
+</h2>
+
+<input id="applicationId" placeholder="Application ID">
+
+<input id="interviewerId" placeholder="Interviewer ID">
+
+<input id="scheduledAt" type="datetime-local">
+
+<input id="feedback" placeholder="Feedback">
+
+<input id="rating" type="number" placeholder="Rating">
+
+<button class="action" onclick="saveInterview()">
+
+Create Interview
+
+</button>
+
+</div>
+
+
+
+
+
+<!-- ================= PUT BOX ================= -->
+
+<div id="putBox" class="box">
+
+<h2>
+
+Update Interview Session
+
+</h2>
+
+<input id="putId" placeholder="Interview ID">
+
+<input id="putApplicationId" placeholder="Application ID">
+
+<input id="putInterviewerId" placeholder="Interviewer ID">
+
+<input id="putScheduledAt" type="datetime-local">
+
+<input id="putFeedback" placeholder="Feedback">
+
+<input id="putRating" type="number" placeholder="Rating">
+
+<button class="action" onclick="updateInterview()">
+
+Update Interview
+
+</button>
+
+</div>
+
+
+
+
+
+<!-- ================= PATCH BOX ================= -->
+
+<div id="patchBox" class="box">
+
+<h2>
+
+Patch Interview Session
+
+</h2>
+
+<input id="patchId" placeholder="Interview ID">
+
+<input id="patchApplicationId" placeholder="Application ID">
+
+<input id="patchInterviewerId" placeholder="Interviewer ID">
+
+<input id="patchScheduledAt" type="datetime-local">
+
+<input id="patchFeedback" placeholder="Feedback">
+
+<input id="patchRating" type="number" placeholder="Rating">
+
+<button class="action" onclick="patchInterview()">
+
+Patch Interview
+
+</button>
+
+</div>
+
+
+
+
+
+<!-- ================= DELETE BOX ================= -->
+
+<div id="deleteBox" class="box">
+
+<h2>
+
+Delete Interview Session
+
+</h2>
+
+<input id="deleteId" placeholder="Interview ID">
+
+<button class="action" onclick="deleteInterview()">
+
+Delete Interview
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 HireHigh Recruitment & Hiring Management System
+
+</p>
+
+</footer>
+<style>
+
+/* ================= CRUD BOX ================= */
+
+.box{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    animation:fade .4s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= INPUT ================= */
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border-radius:8px;
+
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+/* ================= ACTION BUTTON ================= */
+
+.action{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.action:hover{
+
+    background:#2563eb;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+
+    margin-top:25px;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#1e3a8a;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+td{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+/* ================= MESSAGE ================= */
+
+#message{
+
+    display:none;
+
+    margin:20px 0;
+
+    padding:15px;
+
+    text-align:center;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+}
+
+.success{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+.error{
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:40px;
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+</style>
+
+<script>
+
+// ================= BACKEND URL =================
+
+const baseURL="https://fullstackhirehighbackend.onrender.com/hirehigh";
+
+
+
+function getToken(){
+
+    return localStorage.getItem("jwt_token");
+
+}
+
+// ================= SHOW BOX =================
+
+function showBox(id){
+
+    document.querySelectorAll(".box").forEach(box=>{
+
+        box.style.display="none";
+
+    });
+
+    document.getElementById(id).style.display="block";
+
+}
+
+// ================= MESSAGE =================
+
+function showMessage(message,type){
+
+    let msg=document.getElementById("message");
+
+    msg.innerHTML=message;
+
+    msg.className=type;
+
+    msg.style.display="block";
+
+    setTimeout(()=>{
+
+        msg.style.display="none";
+
+    },3000);
+
+}
+
+// ================= CLEAR INPUTS =================
+
+function clearInputs(){
+
+    document.querySelectorAll("input").forEach(input=>{
+
+        input.value="";
+
+    });
+
+}
+// ================= GET ALL =================
+
+async function getAllInterviews(){
+
+try{
+
+let response=await fetch(baseURL+"/interviews",{
+
+method:"GET",
+
+headers:{
+"Authorization":"Bearer "+getToken()
+}
+
+});
+
+if(!response.ok){
+
+showMessage("Unable to Fetch Interviews","error");
+return;
+
+}
+
+let interviews=await response.json();
+
+document.getElementById("totalInterviews").innerHTML=interviews.length;
+
+let table=document.getElementById("interviewTable");
+
+table.innerHTML="";
+
+interviews.forEach(interview=>{
+
+table.innerHTML+=`
+
+<tr>
+
+<td>${interview.id}</td>
+
+<td>${interview.application?.id ?? interview.applicationId}</td>
+
+<td>${interview.interviewer?.id ?? interview.interviewerId}</td>
+
+<td>${interview.scheduledAt}</td>
+
+<td>${interview.feedback}</td>
+
+<td>${interview.rating}</td>
+
+</tr>
+
+`;
+
+});
+
+showMessage("Interviews Loaded Successfully","success");
+
+}catch(error){
+
+showMessage("Server Error","error");
+
+}
+
+}
+
+// ================= GET BY ID =================
+
+async function getInterviewById(){
+
+let id=document.getElementById("getId").value;
+
+let response=await fetch(baseURL+"/interviews/"+id,{
+
+headers:{
+"Authorization":"Bearer "+getToken()
+}
+
+});
+
+if(response.ok){
+
+let interview=await response.json();
+
+alert(
+
+"Interview ID : "+interview.id+
+
+"\nApplication ID : "+(interview.application?.id ?? interview.applicationId)+
+
+"\nInterviewer ID : "+(interview.interviewer?.id ?? interview.interviewerId)+
+
+"\nScheduled At : "+interview.scheduledAt+
+
+"\nFeedback : "+interview.feedback+
+
+"\nRating : "+interview.rating
+
+);
+
+}else{
+
+showMessage("Interview Not Found","error");
+
+}
+
+}
+
+// ================= POST =================
+
+async function saveInterview(){
+
+let data={
+
+application:{
+id:Number(applicationId.value)
+},
+
+interviewer:{
+id:Number(interviewerId.value)
+},
+
+scheduledAt:scheduledAt.value,
+
+feedback:feedback.value,
+
+rating:Number(rating.value)
+
+};
+
+let response=await fetch(baseURL+"/interviews",{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(data)
+
+});
+
+if(response.ok){
+
+showMessage("Interview Created Successfully","success");
+
+clearInputs();
+
+getAllInterviews();
+
+}else{
+
+showMessage(await response.text(),"error");
+
+}
+
+}
+
+// ================= PUT =================
+
+async function updateInterview(){
+
+let id=putId.value;
+
+let data={
+
+application:{
+id:Number(putApplicationId.value)
+},
+
+interviewer:{
+id:Number(putInterviewerId.value)
+},
+
+scheduledAt:putScheduledAt.value,
+
+feedback:putFeedback.value,
+
+rating:Number(putRating.value)
+
+};
+
+let response=await fetch(baseURL+"/interviews/"+id,{
+
+method:"PUT",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(data)
+
+});
+
+if(response.ok){
+
+showMessage("Interview Updated Successfully","success");
+
+clearInputs();
+
+getAllInterviews();
+
+}else{
+
+showMessage("Update Failed","error");
+
+}
+
+}
+
+// ================= PATCH =================
+
+async function patchInterview(){
+
+let id=patchId.value;
+
+let data={};
+
+if(patchApplicationId.value){
+
+data.application={id:Number(patchApplicationId.value)};
+
+}
+
+if(patchInterviewerId.value){
+
+data.interviewer={id:Number(patchInterviewerId.value)};
+
+}
+
+if(patchScheduledAt.value){
+
+data.scheduledAt=patchScheduledAt.value;
+
+}
+
+if(patchFeedback.value){
+
+data.feedback=patchFeedback.value;
+
+}
+
+if(patchRating.value){
+
+data.rating=Number(patchRating.value);
+
+}
+
+let response=await fetch(baseURL+"/interviews/"+id,{
+
+method:"PATCH",
+
+headers:{
+
+"Content-Type":"application/json",
+
+"Authorization":"Bearer "+getToken()
+
+},
+
+body:JSON.stringify(data)
+
+});
+
+if(response.ok){
+
+showMessage("Interview Patched Successfully","success");
+
+clearInputs();
+
+getAllInterviews();
+
+}else{
+
+showMessage("Patch Failed","error");
+
+}
+
+}
+
+// ================= DELETE =================
+
+async function deleteInterview(){
+
+let id=deleteId.value;
+
+if(!confirm("Are you sure to delete this interview?")){
+
+return;
+
+}
+
+let response=await fetch(baseURL+"/interviews/"+id,{
+
+method:"DELETE",
+
+headers:{
+
+"Authorization":"Bearer "+getToken()
+
+}
+
+});
+
+if(response.ok){
+
+showMessage("Interview Deleted Successfully","success");
+
+clearInputs();
+
+getAllInterviews();
+
+}else{
+
+showMessage("Delete Failed","error");
+
+}
+
+}
+
+// ================= PAGE LOAD =================
+
+window.onload=function(){
+
+getAllInterviews();
+
+};
+
+</script>
+
+</body>
+
+</html>
